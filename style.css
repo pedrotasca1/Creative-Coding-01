@@ -17,8 +17,8 @@ html, body {
 }
 
 section {
-    height: 100vh !important;
-    width: 100vw !important;
+    min-height: 100vh !important;
+    min-width: 100vw !important;
 }
 
 .send-front {
@@ -68,18 +68,17 @@ section {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    /* align-self: center; */
 
     padding: 2rem;
     margin: 0 auto;
+
+    z-index: 10;
 }
 
 .nav-button {
     height: 60px;
     padding: 8px;
     animation: rotate 1s;
-
-
 }
 
 /* Hero Section */
@@ -140,8 +139,7 @@ section {
     opacity: 1;
     transition: opacity 0.1s;
 
-    /* animation: heart-beat 2s;
-    animation-iteration-count: infinite; */
+    pointer-events: none;
 }
 
 .train-collage-wrapper {
@@ -151,6 +149,7 @@ section {
 
     z-index: 3;
     transition: transform 0.1s;
+    pointer-events: none;
 }
 
 .can-animated {
@@ -181,10 +180,7 @@ section {
 
 #section03 {
     width: 100vw;
-    /* overflow-x: scroll; */
-    /* scroll-snap-type: x mandatory; */
     display: flex;
-    /* overscroll-behavior-x: contain; */
     
 }
 
@@ -202,7 +198,6 @@ section {
 
 
     width:  100vw !important;
-    /* scroll-snap-align: start; */
     padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
@@ -319,7 +314,7 @@ section {
 
 .line {
     opacity: 0;
-    transform: translateY(10vh); /* Initial position of text off-screen */
+    transform: translateY(10vh);
     margin: 0;
     font-family: "Anton";
     font-size: 2rem;
@@ -330,7 +325,7 @@ section {
 .scrolling-text {
     position: relative;
     overflow: hidden;
-    height: 100%; /* Full height of the container */
+    height: 100%;
 }
 
 .section05 {
@@ -391,6 +386,15 @@ section {
 
 
 /* About Page */
+.about-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
 .content-card {
     display: flex;
     flex-direction: column;
@@ -404,11 +408,21 @@ section {
     font-size: 48px;
 }
 
-.about-image {
+
+.tag-collage {
     position: absolute;
-    left: 40%;
-    top: 10%;
-    width: 80%;
+    top: -40%;
+    left: 150px;
+
+    scale: 0.7;
+    opacity: 0.2;
+
+}
+
+.individual-tags {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .container404 {

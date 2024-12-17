@@ -54,7 +54,7 @@ const totalScrollWidth = (sectionHorizontal.length - 1) * 100;
 
 
 gsap.to(sectionHorizontal, {
-    xPercent: -100 * (sectionHorizontal.length - 1), // Moves sections horizontally
+    xPercent: -100 * (sectionHorizontal.length - 1),
     ease: "none",
     scrollTrigger: {
         trigger: "#section03", 
@@ -64,12 +64,14 @@ gsap.to(sectionHorizontal, {
         end: `+=${totalScrollWidth * 5}vw`,
         snap: {
             snapTo: (progress) => Math.round(progress * (sectionHorizontal.length - 1)) / (sectionHorizontal.length - 1), 
-            // ease: "ease.inOut", // Smooth easing for snapping
+  
         },
         anticipatePin: 1,
         // markers: true,
     },
 });
+
+//ChatGPT has helped me with this code implementation
 
 const lines = gsap.utils.toArray(".line");
 
@@ -117,6 +119,4 @@ const appendImage = () => {
     );
 };
 
-// Listen for scroll events
-// window.addEventListener("scroll", checkScrollPosition);
 
